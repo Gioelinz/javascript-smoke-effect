@@ -8,5 +8,9 @@ for (let i = 0; i < letters.length; i++) {
 
     letter.addEventListener("mouseover", function () {
         letter.classList.add('active');
+
+        setTimeout(() => {
+            letter.classList.remove('active');
+        }, 5000);
     })
 }
