@@ -34,10 +34,14 @@ main .text span{
 
 
 main .text span.active{
-    animation: smoke 2s linear forwards;
+    animation: smoke_out 2s linear forwards;
 }
 
-@keyframes smoke
+main .text span.not-active{
+    animation: smoke_in 1s linear forwards;
+}
+
+@keyframes smoke_out
 {
     0%
     {
@@ -56,5 +60,27 @@ main .text span.active{
         opacity: 0;
         filter: blur(20px);
         transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
+    }
+}
+
+@keyframes smoke_in
+{
+    0%
+    {
+        opacity: 0;
+        filter: blur(20px);
+        transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
+    }
+    50%
+    {
+        opacity: 1;
+        pointer-events: none;
+
+    }
+    100%
+    {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
     }
 }
