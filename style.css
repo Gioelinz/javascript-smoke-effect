@@ -35,6 +35,7 @@ main .text span{
 
 main .text span.active{
     animation: smoke_out 2s linear forwards;
+    cursor: default;
 }
 
 main .text span.not-active{
